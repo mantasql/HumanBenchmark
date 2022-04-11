@@ -29,7 +29,7 @@ public class VerbalMemoryLogic : MonoBehaviour
         gameRunning = true;
     }
 
-    string ShowRandomWord()
+    public string ShowRandomWord()
     {
         string newShowableWord = wordBank[Random.Range(0, wordBank.Count)];
         showableWords.Add(newShowableWord);
@@ -42,7 +42,7 @@ public class VerbalMemoryLogic : MonoBehaviour
         return currentWord;
     }
 
-    void ResetWords()
+    public void ResetWords()
     {
         wordBank.AddRange(showableWords);
         showableWords.Clear();
@@ -73,7 +73,7 @@ public class VerbalMemoryLogic : MonoBehaviour
         }
     }
 
-    private void showGameOverScreen(){
+    public void showGameOverScreen(){
         correctWordCount.text = "Correct word count: "+ correctAnswers;
         gamePanel.SetActive(false);
         gameOverPanel.SetActive(true);
@@ -89,5 +89,13 @@ public class VerbalMemoryLogic : MonoBehaviour
 
     public void returnToMenu() {
         SceneManager.LoadScene("MainMenu",LoadSceneMode.Single);
+    } 
+
+    public string getCurrentWord() {
+        return currentWord;
+    }
+
+    public int getWordBankSize() {
+        return wordBank.Count;
     }
 }
