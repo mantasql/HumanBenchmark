@@ -1083,8 +1083,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1284437268}
-        m_TargetAssemblyTypeName: MenuScene, Assembly-CSharp
-        m_MethodName: loadMenu
+        m_TargetAssemblyTypeName: VerbalMemoryLogic, Assembly-CSharp
+        m_MethodName: returnToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1141,9 +1141,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1284437263}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9bd43ea235a39d49bd1bd527e275375, type: 3}
+  m_Script: {fileID: 11500000, guid: 9aa865beb9768fd4ab621ba578efc5ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  displayedWord: {fileID: 0}
+  gamePanel: {fileID: 0}
+  gameOverPanel: {fileID: 0}
+  correctWordCount: {fileID: 0}
 --- !u!1 &1534835952
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class VerbalMemoryLogic : MonoBehaviour
 {
@@ -84,5 +85,9 @@ public class VerbalMemoryLogic : MonoBehaviour
         correctAnswers = 0;
         gamePanel.SetActive(true);
         gameOverPanel.SetActive(false);
+    }
+
+    public void returnToMenu() {
+        SceneManager.LoadScene("MainMenu",LoadSceneMode.Single);
     }
 }
