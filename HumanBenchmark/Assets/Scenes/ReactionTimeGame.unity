@@ -611,7 +611,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1593245622}
-        m_TargetAssemblyTypeName: ReactionTimeGame, Scripts
+        m_TargetAssemblyTypeName: ReactionTimeGame, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
