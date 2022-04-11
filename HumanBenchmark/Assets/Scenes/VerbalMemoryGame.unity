@@ -1144,10 +1144,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aa865beb9768fd4ab621ba578efc5ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayedWord: {fileID: 0}
-  gamePanel: {fileID: 0}
-  gameOverPanel: {fileID: 0}
-  correctWordCount: {fileID: 0}
+  displayedWord: {fileID: 1742501822}
+  gamePanel: {fileID: 2003792410}
+  gameOverPanel: {fileID: 270268105}
+  correctWordCount: {fileID: 1908600017}
 --- !u!1 &1534835952
 GameObject:
   m_ObjectHideFlags: 0
