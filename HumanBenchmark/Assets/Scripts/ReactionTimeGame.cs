@@ -20,7 +20,7 @@ public class ReactionTimeGame : MonoBehaviour
         timerCanBeStopped = false;
         reactionTime = 0.0f;
 
-        buttonText.text = "Click to Start";
+        buttonText.text = "Reaction Time Test\n\nWhen the red box turns green, click as quickly as you can\n\nClick anywhere to start";
         buttonImage.color = Color.white;
     }
 
@@ -32,14 +32,14 @@ public class ReactionTimeGame : MonoBehaviour
         }
     }
 
-    public void StartGame()
+    public void OnClick()
     {
         if (!isGameRunning)
         {
             isGameRunning = true;
             timerCanBeStopped = false;
             reactionTime = 0.0f;
-            buttonText.text = "Wait for Green";
+            buttonText.text = "...\nWait for green";
             buttonImage.color = Color.red;
             StartCoroutine(WaitForRandomTime());
         }
@@ -50,11 +50,11 @@ public class ReactionTimeGame : MonoBehaviour
 
             if (timerCanBeStopped)
             {
-                buttonText.text = "Reaction Time: " + Mathf.Round(reactionTime * 1000.0f) + " ms\nClick to Start";
+                buttonText.text = "Reaction time: " + Mathf.Round(reactionTime * 1000.0f) + " ms\nClick to keep going";
             }
             else
             {
-                buttonText.text = "Too Soon!\nClick to Start";
+                buttonText.text = "Too soon!\nClick to try again";
                 StopAllCoroutines();
             }
         }
