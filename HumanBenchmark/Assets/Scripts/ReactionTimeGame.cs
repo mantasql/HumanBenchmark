@@ -20,8 +20,15 @@ public class ReactionTimeGame : MonoBehaviour
         timerCanBeStopped = false;
         reactionTime = 0.0f;
 
-        buttonText.text = "Reaction Time Test\n\nWhen the red box turns green, click as quickly as you can\n\nClick anywhere to start";
-        buttonImage.color = Color.white;
+        if (buttonText)
+        {
+            buttonText.text = "Reaction Time Test\n\nWhen the red box turns green, click as quickly as you can\n\nClick anywhere to start";
+        }
+        
+        if (buttonImage)
+        {
+            buttonImage.color = Color.white;
+        }
     }
 
     void Update()
@@ -39,22 +46,42 @@ public class ReactionTimeGame : MonoBehaviour
             isGameRunning = true;
             timerCanBeStopped = false;
             reactionTime = 0.0f;
-            buttonText.text = "...\nWait for green";
-            buttonImage.color = Color.red;
+
+            if (buttonText)
+            {
+                buttonText.text = "...\nWait for green";
+            }
+            
+            if (buttonImage)
+            {
+                buttonImage.color = Color.red;
+            }
+            
             StartCoroutine(WaitForRandomTime());
         }
         else
         {
             isGameRunning = false;
-            buttonImage.color = Color.white;
+
+            if (buttonImage)
+            {
+                buttonImage.color = Color.white;
+            }
 
             if (timerCanBeStopped)
             {
-                buttonText.text = "Reaction time: " + Mathf.Round(reactionTime * 1000.0f) + " ms\nClick to keep going";
+                if (buttonText)
+                {
+                    buttonText.text = "Reaction time: " + Mathf.Round(reactionTime * 1000.0f) + " ms\nClick to keep going";
+                }
             }
             else
             {
-                buttonText.text = "Too soon!\nClick to try again";
+                if (buttonText)
+                {
+                    buttonText.text = "Too soon!\nClick to try again";
+                }
+
                 StopAllCoroutines();
             }
         }
@@ -68,5 +95,9 @@ public class ReactionTimeGame : MonoBehaviour
         timerCanBeStopped = true;
         buttonText.text = "Click!";
         buttonImage.color = Color.green;
+    }
+
+    public bool IsGameRunning() {
+        return isGameRunning;
     }
 }
