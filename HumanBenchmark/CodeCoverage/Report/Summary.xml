@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CoverageReport scope="Summary">
+  <Summary>
+    <Generatedon>4/18/2022 - 3:09:26 PM</Generatedon>
+    <Parser>MultiReportParser (2x OpenCoverParser)</Parser>
+    <Assemblies>3</Assemblies>
+    <Classes>7</Classes>
+    <Files>7</Files>
+    <Coveredlines>115</Coveredlines>
+    <Uncoveredlines>75</Uncoveredlines>
+    <Coverablelines>190</Coverablelines>
+    <Totallines>319</Totallines>
+    <Linecoverage>60.5</Linecoverage>
+    <Coveredbranches>0</Coveredbranches>
+    <Totalbranches>0</Totalbranches>
+    <Coveredmethods>18</Coveredmethods>
+    <Totalmethods>26</Totalmethods>
+    <Methodcoverage>69.2</Methodcoverage>
+  </Summary>
+  <Coverage>
+    <Assembly name="EditMode" classes="1" coverage="100" coveredlines="16" coverablelines="16" totallines="33" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="3" totalmethods="3" methodcoverage="100">
+      <Class name="VerbalMemoryEditModeTests" coverage="100" coveredlines="16" coverablelines="16" totallines="33" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="3" totalmethods="3" methodcoverage="100" />
+    </Assembly>
+    <Assembly name="PlayMode" classes="1" coverage="100" coveredlines="26" coverablelines="26" totallines="46" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="3" totalmethods="3" methodcoverage="100">
+      <Class name="ReactionTimeGameTests" coverage="100" coveredlines="26" coverablelines="26" totallines="46" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="3" totalmethods="3" methodcoverage="100" />
+    </Assembly>
+    <Assembly name="Scripts" classes="5" coverage="49.3" coveredlines="73" coverablelines="148" totallines="240" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="12" totalmethods="20" methodcoverage="60">
+      <Class name="BackToMenuButton" coverage="100" coveredlines="3" coverablelines="3" totallines="10" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
+      <Class name="ExitApplication" coverage="0" coveredlines="0" coverablelines="3" totallines="10" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
+      <Class name="LoadMenuGames" coverage="0" coveredlines="0" coverablelines="6" totallines="16" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="ReactionTimeGame" coverage="55" coveredlines="38" coverablelines="69" totallines="103" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="5" totalmethods="5" methodcoverage="100" />
+      <Class name="VerbalMemoryLogic" coverage="47.7" coveredlines="32" coverablelines="67" totallines="101" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="6" totalmethods="11" methodcoverage="54.5" />
+    </Assembly>
+  </Coverage>
+</CoverageReport>

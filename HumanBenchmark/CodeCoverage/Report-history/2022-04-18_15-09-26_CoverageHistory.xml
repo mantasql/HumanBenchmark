@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<coverage version="1.0" date="2022-04-18_15-09-26" tag="">
+  <assembly name="EditMode">
+    <class name="VerbalMemoryEditModeTests" coveredlines="16" coverablelines="16" totallines="33" coveredbranches="0" totalbranches="0" />
+  </assembly>
+  <assembly name="PlayMode">
+    <class name="ReactionTimeGameTests" coveredlines="26" coverablelines="26" totallines="46" coveredbranches="0" totalbranches="0" />
+  </assembly>
+  <assembly name="Scripts">
+    <class name="BackToMenuButton" coveredlines="3" coverablelines="3" totallines="10" coveredbranches="0" totalbranches="0" />
+    <class name="ExitApplication" coveredlines="0" coverablelines="3" totallines="10" coveredbranches="0" totalbranches="0" />
+    <class name="LoadMenuGames" coveredlines="0" coverablelines="6" totallines="16" coveredbranches="0" totalbranches="0" />
+    <class name="ReactionTimeGame" coveredlines="38" coverablelines="69" totallines="103" coveredbranches="0" totalbranches="0" />
+    <class name="VerbalMemoryLogic" coveredlines="32" coverablelines="67" totallines="101" coveredbranches="0" totalbranches="0" />
+  </assembly>
+</coverage>
