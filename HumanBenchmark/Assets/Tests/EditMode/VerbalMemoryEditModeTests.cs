@@ -23,7 +23,7 @@ public class VerbalMemoryEditModeTests
         VerbalMemoryLogic verbalMemoryLogic = GameObject.Find("VerbalMemoryLogic").GetComponent<VerbalMemoryLogic>();
         verbalMemoryLogic.showGameOverScreen();
         GameObject gameOverScreen = GameObject.Find("GameOverPanel");
-        Assert.AreEqual(true, gameOverScreen.active);
+        Assert.AreEqual(true, gameOverScreen.activeSelf);
     }
 
     [Test]
