@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1042512375486",
+    "project_id": "human--benchmark",
+    "storage_bucket": "human--benchmark.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1042512375486:android:b8df51dba5d89e6950f8ef",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.HumanBenchmark"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1042512375486-kjrgmrg1tesehv7u8ji2ahk5n3ofuino.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoWnR0lAWv0C3BE8CQR3QYfKTSZyhyahk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1042512375486-kjrgmrg1tesehv7u8ji2ahk5n3ofuino.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
