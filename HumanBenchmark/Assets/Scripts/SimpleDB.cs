@@ -31,13 +31,13 @@ public class SimpleDB : MonoBehaviour
         }
     }
 
-    public void CreateUser(string username, string password)
+    public bool CreateUser(string username, string password)
     {
         using (var connection = new SqliteConnection(databaseName)) 
         {
             connection.Open();
 
-            if (DoesUserExist(connection, username)) { connection.Close(); return; }
+            if (DoesUserExist(connection, username)) { connection.Close(); return false; }
 
             using (var command = connection.CreateCommand())
             {
@@ -47,6 +47,8 @@ public class SimpleDB : MonoBehaviour
 
             connection.Close();
         }
+
+        return true;
     }
 
     public void GetUsers()

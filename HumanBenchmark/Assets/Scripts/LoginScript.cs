@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 public class LoginScript : MonoBehaviour
 {
     SimpleDB simpleDB;
+    public GameObject SignInScreen;
+    public GameObject SignUpScreen;
+
 
     void Start()
     {
@@ -22,10 +25,20 @@ public class LoginScript : MonoBehaviour
         {
             SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
         }
-        Debug.Log(username);
-        Debug.Log(password);
-        //if (simpleDB.Use)
+    }
 
-        //GetComponentInChildren<TMP_InputField>().text
+    public void RegisterUser() 
+    {
+        string username = GameObject.Find("Username").GetComponentInChildren<TMP_InputField>().text;
+        string password = GameObject.Find("Password").GetComponentInChildren<TMP_InputField>().text;
+        string confirmPassword = GameObject.Find("ConfirmPassword").GetComponentInChildren<TMP_InputField>().text;
+
+        if (confirmPassword != password) return;
+
+        if (simpleDB.CreateUser(username, password))
+        {
+            SignInScreen.SetActive(true);
+            SignUpScreen.SetActive(false);
+        }
     }
 }
