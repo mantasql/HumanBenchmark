@@ -16,9 +16,6 @@ public class VerbalMemoryLogic : MonoBehaviour
     List<string> showableWords = new List<string>();
     List<string> shownWords = new List<string>();
     string currentWord = null;
-
-    private bool gameRunning;
-
     int currentWordIndex = 0;
     int correctAnswers = 0;
 
@@ -26,7 +23,6 @@ public class VerbalMemoryLogic : MonoBehaviour
         gameOverPanel.SetActive(false);
         gamePanel.SetActive(true);
         displayedWord.text = ShowRandomWord();
-        gameRunning = true;
     }
 
     public string ShowRandomWord()
@@ -56,7 +52,6 @@ public class VerbalMemoryLogic : MonoBehaviour
             displayedWord.text = ShowRandomWord();
             correctAnswers++;
         } else{
-            gameRunning = false;
             showGameOverScreen(); 
         }
     }
@@ -68,7 +63,6 @@ public class VerbalMemoryLogic : MonoBehaviour
             displayedWord.text = ShowRandomWord();   
             correctAnswers++;
         } else{
-            gameRunning = false;
             showGameOverScreen();
         }
     }
