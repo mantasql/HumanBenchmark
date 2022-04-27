@@ -6,6 +6,7 @@ using Mono.Data.Sqlite;
 public class SimpleDB : MonoBehaviour
 {
     private string databaseName = "URI=file:HumanBenchmark.db";
+    //private string loggedInUser;
 
     void Start()
     {
@@ -86,6 +87,7 @@ public class SimpleDB : MonoBehaviour
                     if (username.Equals(reader["username"]))
                     {
                         Debug.Log("User with such username '" + reader["username"] + "' already exists!");
+                        reader.Close();
                         return true;
                     }
                 }
@@ -107,5 +109,40 @@ public class SimpleDB : MonoBehaviour
 
             return result;
         }
+    }
+
+        public bool VerifyLogin(string username, string password) {
+        using (var connection = new SqliteConnection(databaseName)) 
+        {
+            connection.Open();
+            
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = $"SELECT * FROM USERS WHERE username = '{username}' AND password = '{password}';";
+                using (System.Data.IDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        if (username.Equals(reader["username"]))
+                        {
+                            PlayerPrefs.SetString("loggedInUser", username);
+                            connection.Close();
+                            reader.Close();
+                            return true;
+                        }
+                    }
+
+                    reader.Close();
+                }
+            }
+
+            connection.Close();
+        }
+        
+        return false;
+    }
+
+    public string GetLoggedInUser() {
+        return PlayerPrefs.GetString("loggedInUser");
     }
 }
