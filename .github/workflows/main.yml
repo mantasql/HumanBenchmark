@@ -1,6 +1,6 @@
 name: Test project
 
-on: [pull_request]
+on: [push, pull_request]
 
 jobs:
   buildForAllSupportedPlatforms:
@@ -20,9 +20,12 @@ jobs:
           lfs: true
       - uses: actions/cache@v2
         with:
-          path: Library
+          projectPath: ${{ matrix.projectPath }}
+          path: ${{ matrix.projectPath }}/Library
           key: Library-${{ matrix.targetPlatform }}
-          restore-keys: Library-
+          restore-keys: |
+          Library-${{ matrix.projectPath }}-
+          Library-
       - uses: game-ci/unity-builder@v2
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
