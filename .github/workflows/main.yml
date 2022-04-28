@@ -24,7 +24,6 @@ jobs:
           path: ${{ matrix.projectPath }}/Library
           key: Library-${{ matrix.targetPlatform }}
           restore-keys: |
-          Library-${{ matrix.projectPath }}-
           Library-
       - uses: game-ci/unity-builder@v2
         env:
