@@ -9,10 +9,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        targetPlatform:
-          - StandaloneWindows64
         projectPath:
           - ./HumanBenchmark
+        targetPlatform:
+          - StandaloneWindows64
     steps:
       - uses: actions/checkout@v2
         with:
