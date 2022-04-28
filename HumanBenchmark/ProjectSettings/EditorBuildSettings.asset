@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VerbalMemoryGame.unity
     guid: be4e8e6e628075940831e1ce596de620
+  - enabled: 1
+    path: Assets/Scenes/Authentication.unity
+    guid: cb8605fe9e261c7478b7667b1efc05d2
   m_configObjects: {}
