@@ -6,7 +6,7 @@ using UnityEngine.TestTools;
 
 
 public class DatabaseTests
-{
+{ //asdasd
     [Test]
     public void CreateNewUserTest()
     {
@@ -24,5 +24,5 @@ public class DatabaseTests
         simpleDB.CreateUser(randomUsername, randomUsername);
         simpleDB.VerifyLogin(randomUsername, randomUsername);
         Assert.AreEqual(randomUsername, PlayerPrefs.GetString("loggedInUser"));
-    }
+    } 
 }
