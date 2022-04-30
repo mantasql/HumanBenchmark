@@ -33,8 +33,12 @@ public class AuthenticationE2E
         LoadScene();
         yield return null;
 
+        SimpleDB simpleDB = GameObject.Find("DatabaseManager").GetComponent<SimpleDB>();
+
         GameObject.Find("SignIn/Username").GetComponent<TMP_InputField>().text = "TestLogin";
         GameObject.Find("SignIn/Password").GetComponent<TMP_InputField>().text = "TestPassword";
+
+        Assert.AreEqual(simpleDB.VerifyLogin("TestLogin","TestPassword"),true);
 
         GameObject.Find("SignIn/SignIn").GetComponent<Button>().onClick.Invoke();
         yield return null;

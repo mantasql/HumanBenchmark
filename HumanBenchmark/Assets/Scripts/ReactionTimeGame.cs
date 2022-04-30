@@ -100,4 +100,6 @@ public class ReactionTimeGame : MonoBehaviour
     public bool IsGameRunning() {
         return isGameRunning;
     }
+
+    public bool TimerCanBeStopped { get => timerCanBeStopped; }
 }

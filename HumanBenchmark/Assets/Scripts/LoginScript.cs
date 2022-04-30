@@ -34,6 +34,7 @@ public class LoginScript : MonoBehaviour
         string confirmPassword = GameObject.Find("ConfirmPassword").GetComponentInChildren<TMP_InputField>().text;
 
         if (confirmPassword != password) return;
+        if (username.Length <= 0 || password.Length <= 0) return;
 
         if (simpleDB.CreateUser(username, password))
         {
