@@ -45,4 +45,21 @@ public class AuthenticationE2E
 
         Assert.AreEqual("MainMenu",SceneManager.GetActiveScene().name);
     }
+
+    [UnityTest]
+    public IEnumerator SignInWithWrongCredentialsTest()
+    {
+        LoadScene();
+        yield return null;
+
+        SimpleDB simpleDB = GameObject.Find("DatabaseManager").GetComponent<SimpleDB>();
+
+        GameObject.Find("SignIn/Username").GetComponent<TMP_InputField>().text = "TestLoginWithWrongCredentials";
+        GameObject.Find("SignIn/Password").GetComponent<TMP_InputField>().text = "TestPasswordWithWrongCredentials";
+
+        GameObject.Find("SignIn/SignIn").GetComponent<Button>().onClick.Invoke();
+        yield return null;
+
+        Assert.AreEqual("Authentication",SceneManager.GetActiveScene().name);
+    }
 }
