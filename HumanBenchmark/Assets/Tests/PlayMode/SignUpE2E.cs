@@ -49,9 +49,9 @@ public class SignUpE2E
         yield return null;
 
         string username = System.Guid.NewGuid().ToString();
-        GameObject.Find("Canvas/Background/SignUp/Username/Text Area/Text").GetComponent<TMP_Text>().text = username;
-        GameObject.Find("Canvas/Background/SignUp/Password/Text Area/Text").GetComponent<TMP_Text>().text = username;
-        GameObject.Find("Canvas/Background/SignUp/ConfirmPassword/Text Area/Text").GetComponent<TMP_Text>().text = username;
+        GameObject.Find("Username").GetComponent<TMP_InputField>().text = username;
+        GameObject.Find("Password").GetComponent<TMP_InputField>().text = username;
+        GameObject.Find("ConfirmPassword").GetComponent<TMP_InputField>().text = username;
 
         GameObject.Find("Canvas/Background/SignUp/SignUp").GetComponent<Button>().onClick.Invoke();
         yield return null;
