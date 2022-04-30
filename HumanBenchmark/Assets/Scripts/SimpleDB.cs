@@ -15,7 +15,7 @@ public class SimpleDB : MonoBehaviour
         GetUsers();
     }
 
-    public void CreateDB() 
+    public void CreateDB()
     {
         using (var connection = new SqliteConnection(databaseName))
         {
@@ -33,7 +33,7 @@ public class SimpleDB : MonoBehaviour
 
     public bool CreateUser(string username, string password)
     {
-        using (var connection = new SqliteConnection(databaseName)) 
+        using (var connection = new SqliteConnection(databaseName))
         {
             connection.Open();
 
@@ -51,16 +51,34 @@ public class SimpleDB : MonoBehaviour
         return true;
     }
 
+    public bool DeleteUser(string username)
+    {
+        using (var connection = new SqliteConnection(databaseName))
+        {
+            connection.Open();
+
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "DELETE FROM USERS WHERE username = '" + username + "';";
+                command.ExecuteNonQuery();
+            }
+
+            connection.Close();
+        }
+
+        return true;
+    }
+
     public void GetUsers()
     {
-        using (var connection = new SqliteConnection(databaseName)) 
+        using (var connection = new SqliteConnection(databaseName))
         {
             connection.Open();
 
             using (var command = connection.CreateCommand())
             {
                 command.CommandText = "SELECT * FROM USERS";
-                
+
                 using (System.Data.IDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -81,7 +99,7 @@ public class SimpleDB : MonoBehaviour
         using (var command = sqlLiteConnection.CreateCommand())
         {
             command.CommandText = "SELECT * FROM USERS WHERE username = '" + username + "';";
-            
+
             using (System.Data.IDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())
@@ -113,11 +131,12 @@ public class SimpleDB : MonoBehaviour
         }
     }
 
-        public bool VerifyLogin(string username, string password) {
-        using (var connection = new SqliteConnection(databaseName)) 
+    public bool VerifyLogin(string username, string password)
+    {
+        using (var connection = new SqliteConnection(databaseName))
         {
             connection.Open();
-            
+
             using (var command = connection.CreateCommand())
             {
                 command.CommandText = $"SELECT * FROM USERS WHERE username = '{username}' AND password = '{password}';";
@@ -140,11 +159,12 @@ public class SimpleDB : MonoBehaviour
 
             connection.Close();
         }
-        
+
         return false;
     }
 
-    public string GetLoggedInUser() {
+    public string GetLoggedInUser()
+    {
         return PlayerPrefs.GetString("loggedInUser");
     }
 }
