@@ -83,6 +83,6 @@ public class HighScoreTable : MonoBehaviour
 
     public void returnToPreviousScene()
     {
-
+        
     }
 }

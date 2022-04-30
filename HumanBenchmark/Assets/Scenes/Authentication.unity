@@ -670,7 +670,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 271847079}
         m_TargetAssemblyTypeName: LoginScript, Scripts
         m_MethodName: LoginUser
         m_Mode: 1
@@ -2422,7 +2422,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 271847079}
         m_TargetAssemblyTypeName: LoginScript, Scripts
         m_MethodName: RegisterUser
         m_Mode: 1
