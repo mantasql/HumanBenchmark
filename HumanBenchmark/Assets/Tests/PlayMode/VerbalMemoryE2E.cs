@@ -44,4 +44,16 @@ public class VerbalMemoryE2E
         
         Assert.AreEqual(false, gamePanel.activeSelf);
     }
+
+    [UnityTest]
+    public IEnumerator ReturnToMenu()
+    {
+        SceneManager.LoadScene("VerbalMemoryGame");
+        yield return null;
+
+        GameObject.Find("Canvas").transform.Find("Button").GetComponent<Button>().onClick.Invoke();
+        yield return null;
+
+        Assert.AreEqual("MainMenu", SceneManager.GetActiveScene().name); 
+    }
 }
